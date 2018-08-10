@@ -1,0 +1,84 @@
+# endpoint
+endpoint: "https://big.one/api/v2"
+
+#
+appkey: ""
+
+#
+appsecret: ""
+
+# 交易对
+symbol_pair: "ONE-USDT"
+
+# 每小时挖矿限量的百分比，此为系统限制，当系统当前小时挖矿量超过此此限量的百分比，
+# 则停止挖矿，等待下一个小时整点在开启挖矿, 值域[1,100]
+one_hourly_limitation_percent: 100
+
+# 检测每小时挖矿限量的时间间隔，单位毫秒
+check_limitation_interval: 30000
+
+#
+enable_check_limitation: true
+
+# 交易数量
+exchange_amount: 100
+
+# 交易间隔, 单位毫秒
+exchange_interval: 3000
+
+# http请求超时时间, 单位毫秒
+request_timeout: 10000
+
+# 如果检查账户操作耗时小于此时间，则尝试延迟. 单位毫秒
+check_balance_relay_time: 1000
+
+# 开启平衡资产功能
+balance_account_balance: true
+
+# 补充余额时用于买入或卖出的base currency 数量系数，该系数乘以
+# sell_number即为补充余额需要买或卖的base currenty数量
+# 值域： 0 ~ 100
+balance_percent: 20
+
+# 平衡资产时是否降低正常刷单数量进行刷单
+balance_exchange: true
+
+# 当账户余额进行平衡计算（quote以当前卖一价转换成base)时，如果
+# 平衡计算后的余额不能进行sell_number的买卖，将降低sell_number
+# 此系数用*sell_number即为降低后sell_number的值，其为百分比，
+# 值与为1 ~ 100
+balance_exchange_percent: 50
+
+# 期望的差价
+expect_diffrent_value: 0.00000001
+
+# 定时检查订单时间间隔，单位毫秒
+check_order_interval: 14000
+
+# 检查订单时获取多少个订单
+check_order_number: 6
+
+# 检测订单的创建时间与当前时间的间隔，超过此时间则取消订单，单位毫秒
+cancel_order_diffrent_time: 6000
+
+# 检查订单时获取哪些类型的订单
+check_order_type:
+  - pending
+
+# 调用取消订单的时间间隔，单位毫秒。
+cancel_order_interval: 1000
+
+# 取消订单时是否锁定交易
+cancel_order_lock_exchange: false
+
+# 平衡资产时是否锁定取消订单
+balance_lock_cancel_order: false
+
+# 创建客户端失败时等待重试时间, 单位毫秒
+create_exchange_client_wait_time: 5000
+
+# 日志路经
+log_file: "log/b1.log"
+
+# 日志级别
+log_level: "debug"
